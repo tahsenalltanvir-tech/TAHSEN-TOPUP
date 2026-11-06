@@ -24,7 +24,7 @@ const server = http.createServer((req, res) => {
 
   // Route root '/' or '/index.html' directly to 'FFX.html'
   if (safeUrl === '/' || safeUrl === '' || safeUrl === '/index.html') {
-    safeUrl = '/FFX.html';
+    safeUrl = '/FFX (7).html';
   }
 
   // Prevent directory traversal
@@ -38,7 +38,7 @@ const server = http.createServer((req, res) => {
   fs.stat(filePath, (err, stats) => {
     if (err || !stats.isFile()) {
       // Fallback: If route not found, serve FFX.html
-      const fallbackPath = path.join(ROOT_DIR, 'FFX.html');
+      const fallbackPath = path.join(ROOT_DIR, 'FFX (7).html');
       fs.stat(fallbackPath, (fbErr, fbStats) => {
         if (!fbErr && fbStats.isFile()) {
           serveFile(fallbackPath, res);
